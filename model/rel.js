@@ -5,16 +5,17 @@ const db = require('../db/conn');
 
 Compras.belongsTo(Usuarios, {
     foreignKey: 'idUsuario',
-    as: 'idUsuario'
+    as: 'idUsuarios'
 })
 
 Compras.hasMany(Produtos, {
     foreignKey: 'idCompras',
-    as: 'produtos'
+    as: 'idProdutos'
 })
 
 Usuarios.hasMany(Compras, {
-    foreignKey: 'idCompras'
+    foreignKey: 'idCompras',
+    as: 'idCompras'
 })
 
 Produtos.belongsTo(Compras, {
