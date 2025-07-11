@@ -1,7 +1,6 @@
 const Compras = require('./Compras');
 const Usuarios = require('./Usuarios');
 const Produtos = require('./Produtos');
-const db = require('../db/conn');
 
 Compras.belongsTo(Usuarios, {
     foreignKey: 'idUsuario',
@@ -22,3 +21,5 @@ Produtos.belongsTo(Compras, {
     foreignKey: 'idCompras',
     as: 'idCompras'
 })
+
+module.exports = {Compras, Usuarios, Produtos}

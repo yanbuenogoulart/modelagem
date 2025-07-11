@@ -9,11 +9,19 @@ const Compras = db.define('compras', {
     },
     idUsuario: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        references: {
+            model: 'usuarios',
+            key: 'idUser'
+        }
     },
     idProduto: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        references: {
+            model: 'produtos',
+            key: 'idProd'
+        }
     },
     quantidade: {
         type: DataTypes.INTEGER,

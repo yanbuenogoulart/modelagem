@@ -1,5 +1,6 @@
 const {Sequelize} = require('sequelize')
-const sequelize = new Sequelize('db_modelagem', 'root', 'senai', {
+const dotenv = require('dotenv').config()
+const sequelize = new Sequelize('db_modelagem', dotenv.parsed.DB_USER, dotenv.parsed.DB_PASS, {
     dialect: 'mysql',
     host: 'localhost'
 })

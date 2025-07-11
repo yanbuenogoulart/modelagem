@@ -33,7 +33,7 @@ const Produtos = db.define('produtos', {
     },
     marca: {
         type: DataTypes.STRING(50),
-        allowNull: false
+        allowNull: true
     },
     thumbnail: {
         type: DataTypes.STRING(255),

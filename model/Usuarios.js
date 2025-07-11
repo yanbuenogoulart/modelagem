@@ -8,15 +8,15 @@ const Usuarios = db.define('usuarios', {
         primaryKey: true
     },
     primeiroNome: {
-        type: DataTypes.STRING(30),
+        type: DataTypes.STRING(50),
         allowNull: false
     },
     sobreNome: {
-        type: DataTypes.STRING(30),
+        type: DataTypes.STRING(50),
         allowNull: false
     },
     idade: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.INTEGER(3),
         allowNull: false
     },
     email: {
@@ -24,7 +24,7 @@ const Usuarios = db.define('usuarios', {
         allowNull: false,
     },
     telefone: {
-        type: DataTypes.STRING(15),
+        type: DataTypes.STRING(30),
         allowNull: true
     },
     endereco: {
