@@ -9,12 +9,10 @@ const port = env.parsed.PORT || 3000
 const hostname = env.parsed.HOSTNAME || 'localhost'
 const conn = require('./db/conn')
 
-app.use(routes)
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 app.use(cors())
-
-
+app.use(routes)
 
 app.get('/', (req, res)=> {
     res.send('Conectado ao servidor')

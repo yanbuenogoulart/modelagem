@@ -23,7 +23,6 @@ const listarProd = async (req, res) => {
     }
 }
 
-// Listar produto por ID
 const listarProdPorId = async (req, res) => {
     try {
         const { id } = req.params

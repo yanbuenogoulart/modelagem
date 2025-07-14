@@ -36,7 +36,7 @@ const Usuarios = db.define('usuarios', {
         allowNull: true
     },
     estado: {
-        type: DataTypes.STRING(30),
+        type: DataTypes.STRING(50),
         allowNull: true
     },
     nascimento: {

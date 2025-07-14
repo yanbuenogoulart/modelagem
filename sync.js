@@ -9,5 +9,4 @@ function sync() {
         conn.close()
     })
 }
-
 sync()
