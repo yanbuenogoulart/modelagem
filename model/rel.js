@@ -1,31 +1,34 @@
 const Compras = require('./Compras');
 const Usuarios = require('./Usuarios');
-const Produtos = require('./Produtos');
+const Produtos = require('./produtos')
 
-
-// compras pertence a usuarios
+// 1. Compra pertence a um usuário
 Compras.belongsTo(Usuarios, {
     foreignKey: 'idUsuario',
-    as: 'idUsuarios'
+    as: 'usuario',
+    onDelete: 'CASCADE'
 })
 
-// compras podem ter varios produtos
-Compras.hasMany(Produtos, {
-    foreignKey: 'idCompras',
-    as: 'idProdutos'
-})
-
-
-// usuarios podem ter varias compras
+// 2. Um usuário tem várias compras
 Usuarios.hasMany(Compras, {
-    foreignKey: 'idCompras',
-    as: 'idCompras'
+    foreignKey: 'idUsuario',
+    as: 'compras',
+    onDelete: 'CASCADE'
 })
 
-// produtos pertencem a compras
-Produtos.belongsTo(Compras, {
-    foreignKey: 'idCompras',
-    as: 'idCompras'
+// 3. Compra pertence a um produto (um produto comprado)
+Compras.belongsTo(Produtos, {
+    foreignKey: 'idProduto',
+    as: 'produto',
+    onDelete: 'CASCADE'
 })
+
+// 4. Um produto tem várias compras (compras feitas desse produto)
+Produtos.hasMany(Compras, {
+    foreignKey: 'idProduto',
+    as: 'compras',
+    onDelete: 'CASCADE'
+})
+
 
 module.exports = {Compras, Usuarios, Produtos}

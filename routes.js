@@ -19,8 +19,6 @@ routes.delete('/compras/:id', comprasController.apagarCompra)
 
 routes.post('/produtos', produtosController.cadastrarProd)
 routes.get('/produtos', produtosController.listarProd)
-routes.post('/produtos', produtosController.cadastrarProd)
-routes.get('/produtos', produtosController.listarProd)
 routes.get('/produtos/id/:id', produtosController.listarProdPorId)
 routes.get('/produtos/nome/:nome', produtosController.listarProdPorNome )
 routes.delete('/produtos/:id', produtosController.apagarProd)

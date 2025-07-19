@@ -1,4 +1,4 @@
-const Produtos = require('../model/Produtos')
+const Produtos = require('../model/produtos')
 const sequelize = require('sequelize')
 const { Op } = require('sequelize')
 
